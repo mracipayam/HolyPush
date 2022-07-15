@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    public CinemachineVirtualCamera camera;
-    private CinemachineTrackedDolly dolly;
-    void Start()
-    {
-        dolly = camera.GetCinemachineComponent<CinemachineTrackedDolly>();
-    }
-
-    void Update()
-    {
-        dolly.m_PathPosition += 0.01f;
-    }
+    // public CinemachineVirtualCamera camera;
+    // private CinemachineTrackedDolly dolly;
+    // void Start()
+    // {
+    //     dolly = camera.GetCinemachineComponent<CinemachineTrackedDolly>();
+    // }
+    //
+    // void Update()
+    // {
+    //     dolly.m_PathPosition += 0.01f;
+    // }
 }
 
 
