@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterCollisionDetection : MonoBehaviour
@@ -15,4 +13,5 @@ public class CharacterCollisionDetection : MonoBehaviour
             animator.SetBool("isPushing",false);
         }
     }
+
 }

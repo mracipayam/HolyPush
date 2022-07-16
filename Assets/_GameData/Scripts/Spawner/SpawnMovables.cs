@@ -17,7 +17,9 @@ public class SpawnMovables : MonoBehaviour
         timerValue -= Time.deltaTime;
         if (timerValue <= 0)
         {
-            Instantiate(MovableItems[Random.Range(0,MovableItems.Count)], new Vector3(Random.Range(-7f,7f), 3, Random.Range(-20f,0f)), Quaternion.identity);
+            var movableItem = Instantiate(MovableItems[Random.Range(0,MovableItems.Count)], new Vector3(Random.Range(-7f,7f), 3, Random.Range(-20f,0f)), Quaternion.identity);
+            movableItem.transform.rotation = Quaternion.Euler(-90, 0, 0);
+
             timerValue = Timer;
         }
     }
