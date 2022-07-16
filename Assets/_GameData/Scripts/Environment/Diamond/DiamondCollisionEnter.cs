@@ -14,6 +14,8 @@ public class DiamondCollisionEnter : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent(out CharacterMovement detect)){
             sparkle.GetComponent<ParticleSystem>().enableEmission = true;
+            GetComponent<Collider>().enabled = false;
+            GetComponent<Rigidbody>().isKinematic = true;
             transform.GetComponent<MeshRenderer>().enabled = false;
             DOVirtual.DelayedCall(1, () => Destroy(gameObject));
         }
