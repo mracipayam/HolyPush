@@ -17,6 +17,8 @@ public class DiamondCollisionEnter : MonoBehaviour
             GetComponent<Collider>().enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
             transform.GetComponent<MeshRenderer>().enabled = false;
+            GameManager.instance.inGameDiamond += 1;
+            GameManager.instance.UpdateInGameDiamondDisplay();
             DOVirtual.DelayedCall(1, () => Destroy(gameObject));
         }
     }

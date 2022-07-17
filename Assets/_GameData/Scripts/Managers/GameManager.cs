@@ -12,7 +12,14 @@ public class GameManager : MonoBehaviour
     public GameObject inGameCanvas;
     public GameObject gameOverCanvas;
     public TextMeshProUGUI inGameCountdownDisplay;
+    public TextMeshProUGUI inGameDiamondDisplay;
     public int inGameCountdownTime;
+    public int inGameDiamond;
+    public int PointAreaOneX;
+    public int PointAreaThreeX;
+    public int PointAreaFiveX;
+    public int TotalScore;
+    
 
     public bool canPlay;
 
@@ -24,9 +31,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void UpdateInGameDiamondDisplay()
     {
-        
+        inGameDiamondDisplay.text = inGameDiamond.ToString();
     }
 
     public void PlayButtonClicked()
@@ -53,6 +60,7 @@ public class GameManager : MonoBehaviour
         }
 
         GameManager.instance.canPlay = false;
+        CalculateScore();
         inGameCanvas.SetActive(false);
         joystickCanvas.SetActive(false);
         gameOverCanvas.SetActive(true);
@@ -60,6 +68,10 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void CalculateScore()
+    {
+        TotalScore = (10 * PointAreaOneX) + (30 * PointAreaThreeX) + (50 * PointAreaFiveX);
+    }
 
 
 
