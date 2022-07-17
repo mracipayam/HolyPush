@@ -17,6 +17,7 @@ public class TimeBonusCollision : MonoBehaviour
             GetComponent<Collider>().enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
             transform.GetComponent<MeshRenderer>().enabled = false;
+            GameManager.instance.inGameCountdownTime += 10;
             DOVirtual.DelayedCall(1, () => Destroy(gameObject));
         }
     }
